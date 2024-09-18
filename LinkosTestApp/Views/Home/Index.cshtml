@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Головна";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt-4">
+    <h2 class="text-center">Графіки відключень світла</h2>
+
+    <div class="my-4">
+        <h4>Імпорт даних</h4>
+        <button id="importBtn" class="btn btn-primary">Імпортувати дані</button>
+        <input type="file" id="importFile" style="display:none" />
+    </div>
+
+    <div class="my-4">
+        <h4>Перевірка наявності світла</h4>
+        <div class="form-inline">
+            <input type="number" id="groupNumber" class="form-control mr-2" placeholder="Номер групи" />
+            <button id="checkAvailabilityBtn" class="btn btn-success">Перевірити</button>
+        </div>
+        <p id="availabilityResult" class="mt-2"></p>
+    </div>
+
+    <div class="my-4">
+        <h4>Редагування графіка групи</h4>
+        <div class="form-inline">
+            <input type="number" id="editGroupNumber" class="form-control mr-2" placeholder="Номер групи" />
+            <button id="loadGroupBtn" class="btn btn-warning">Завантажити</button>
+        </div>
+        <div id="editGroupForm" class="mt-3" style="display:none">
+            <form id="editGroupScheduleForm">
+                <div id="schedulesContainer"></div>
+                <button type="submit" class="btn btn-primary">Зберегти</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="my-4">
+        <h4>Експорт даних</h4>
+        <div class="form-inline">
+            <input type="number" id="exportGroupNumber" class="form-control mr-2" placeholder="Номер групи (необов'язково)" />
+            <button id="exportBtn" class="btn btn-info">Експортувати</button>
+        </div>
+    </div>
+
+    <div class="my-4">
+        <h4>Список груп</h4>
+        <button id="loadGroupsBtn" class="btn btn-secondary">Завантажити групи</button>
+        <div id="groupsList" class="mt-3"></div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.7.1.js"></script>
+<script src="~/Scripts/app.js"></script>

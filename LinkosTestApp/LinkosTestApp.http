@@ -1,0 +1,6 @@
+@LinkosTestApp_HostAddress = http://localhost:5055
+
+GET {{LinkosTestApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
